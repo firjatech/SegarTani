@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="SegarTani - Kebutuhan dapur segar dan higienis langsung dari petani. Panen pagi, sampai siang. Bebas pestisida, harga petani!">
+    <meta name="keywords"
+        content="sayur segar, bumbu dapur, organik, petani lokal, belanja sayur online, segartani, sayuran fresh, kurir kilat">
+    <meta name="author" content="SegarTani">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://segartani.com/">
+    <meta property="og:title" content="SegarTani - Kebutuhan Dapur Segar & Higienis">
+    <meta property="og:description"
+        content="Belanja sayur dan bumbu dapur segar langsung dari petani. Panen pagi, sampai di dapur Anda siang ini!">
+    <meta property="og:image"
+        content="https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p2/243/2025/01/29/kapos-TANI1-2680884446.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SegarTani - Kebutuhan Dapur Segar">
+    <meta name="twitter:description"
+        content="Belanja sayur dan bumbu dapur segar langsung dari petani. Gratis ongkir untuk member baru!">
+    <meta name="twitter:image"
+        content="https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p2/243/2025/01/29/kapos-TANI1-2680884446.jpg">
+
+    <title>SegarTani - Kebutuhan Dapur Segar</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00AA13;
+            --primary-light: #33CC44;
+            --primary-dark: #00880F;
+            --accent: #ff9f1c;
+            --dark: #000000;
+            --light: #f1f8f5;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            scroll-behavior: smooth;
+            padding-top: 80px;
+        }
+
+        .text-primary {
+            color: var(--primary) !important;
+        }
+
+        .bg-primary {
+            background-color: var(--primary) !important;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            border-radius: 50px;
+            padding: 10px 24px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus,
+        .btn-primary:active,
+        .btn-primary:active:focus {
+            background-color: var(--primary-dark) !important;
+            border-color: var(--primary-dark) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 170, 19, 0.3);
+            color: var(--white) !important;
+        }
+
+        .btn-navbar {
+            background-color: #00AA13;
+            border-color: #00AA13;
+            border-radius: 50px;
+            padding: 10px 24px;
+            font-weight: 600;
+            transition: var(--transition);
+            color: white !important;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-navbar:hover,
+        .btn-navbar:focus,
+        .btn-navbar:active {
+            background-color: #00880F !important;
+            border-color: #00880F !important;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 170, 19, 0.3);
+            color: white !important;
+        }
+
+        .bg-light {
+            background-color: var(--light) !important;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .card,
+        .custom-rounded {
+            border-radius: 20px;
+            border: none;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .navbar {
+            background-color: var(--white);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+            transition: var(--transition);
+            min-height: 80px;
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--primary) !important;
+            letter-spacing: -1px;
+        }
+
+        .navbar-brand span {
+            color: var(--accent);
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: var(--dark) !important;
+            transition: var(--transition);
+            margin: 0 10px;
+            position: relative;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary) !important;
+        }
+
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background: var(--white);
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: var(--shadow);
+                position: absolute;
+                top: 80px;
+                left: 5%;
+                right: 5%;
+                z-index: 1050;
+            }
+
+            .nav-link {
+                margin: 5px 0;
+            }
+
+            .btn-navbar {
+                display: block;
+                text-align: center;
+                margin-top: 10px;
+            }
+        }
+
+        .hero {
+            position: relative;
+            background: #242222 url('https://images.unsplash.com/photo-1466632311177-a3d20200085a?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            min-height: calc(100vh - 80px);
+            color: var(--white);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(36, 34, 34, 0.85);
+            z-index: 1;
+        }
+
+        .hero>.container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: var(--primary-light);
+        }
+
+        .hero-badge {
+            background-color: var(--accent);
+            color: var(--white);
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero img {
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            object-fit: cover;
+            max-height: 450px;
+            width: 100%;
+            display: block;
+        }
+
+        .feature-card img {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .stars {
+            color: #ffbc00;
+            font-size: 1.2rem;
+        }
+
+        .testi-card p {
+            font-style: italic;
+            color: #555;
+        }
+
+        .order-section {
+            background-color: var(--light);
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
+        }
+
+        .testimonial-highlight {
+            border-left: 5px solid var(--accent);
+        }
+
+        .bg-footer {
+            background-color: #00AA13;
+        }
+
+        .footer-text {
+            color: #FFFFFF;
+            opacity: 1;
+        }
+
+        .form-control-sm-custom,
+        .form-select-sm-custom {
+            font-size: 0.85rem;
+            padding: 8px 12px;
+            height: auto;
+        }
+
+        .form-control-sm-custom::placeholder {
+            font-size: 0.85rem;
+        }
+
+        .form-select-sm-custom option {
+            font-size: 0.85rem;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true"
+    tabindex="0">
+
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#hero">
+                <img src="logo.jpg" alt="Logo SegarTani" height="85" class="me-2">
+                Segar<span>Tani</span>
+            </a>
+            <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Keunggulan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reviews">Testimoni</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0 w-100">
+                        <a class="btn-navbar d-block d-lg-inline-block" href="#order">Daftar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero d-flex align-items-center">
+        <div class="hero-overlay"></div>
+        <div class="container py-5">
+            <div class="row align-items-center gx-5">
+                <div class="col-md-6 mb-5 mb-md-0 text-center text-md-start">
+                    <span class="hero-badge">Terpercaya & Higienis</span>
+                    <h1 class="mb-4">Masak Lezat dengan <br><span>Sayuran Segar</span></h1>
+                    <p class="lead mb-4 opacity-75">Kebutuhan dapur lengkap diantar langsung ke depan pintu Anda. Panen
+                        pagi ini, sampai di dapur Anda siang ini.</p>
+                    <a href="#order" class="btn btn-primary btn-lg">Belanja Sekarang</a>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p2/243/2025/01/29/kapos-TANI1-2680884446.jpg"
+                        alt="Petani memanen sayuran" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold fs-1">Kenapa Memilih Kami?</h2>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4 col-sm-6">
+                    <div class="card feature-card h-100">
+                        <img src="https://infopublik.id/resources/album/pertanian-perikanan-perkebunan-peternakan/PANEN_KANGKUNG_DARAT.JPG"
+                            alt="Sayur Segar">
+                        <div class="card-body p-4 text-center">
+                            <h3 class="h5 fw-bold text-primary">100% Organik</h3>
+                            <p class="card-text text-muted">Tanpa pestisida kimia, langsung dari petani lokal pilihan.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card feature-card h-100">
+                        <img src="https://www.nusabali.com/article_images/16534/daya-beli-petani-bali-lampaui-angka-nasional-2017-08-02-163303_0.jpg"
+                            alt="Harga Petani">
+                        <div class="card-body p-4 text-center">
+                            <h3 class="h5 fw-bold text-primary">Harga Petani</h3>
+                            <p class="card-text text-muted">Harga lebih hemat karena kami memotong rantai distribusi.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card feature-card h-100">
+                        <img src="https://storage.googleapis.com/tprt0ezsggqjornc7nf1wwluvgulhr/EditorImage/Oakx9/Foto%20Kurir%20Antar%20Paket.webp.webp"
+                            alt="Kurir Kilat">
+                        <div class="card-body p-4 text-center">
+                            <h3 class="h5 fw-bold text-primary">Kurir Kilat</h3>
+                            <p class="card-text text-muted">Garansi kesegaran maksimal dengan pengiriman di hari yang
+                                sama.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="section-padding bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold fs-1">Apa Kata Mereka?</h2>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4 col-sm-6">
+                    <div class="card testi-card bg-light h-100 p-4">
+                        <div class="card-body p-0">
+                            <div class="stars mb-3">⭐⭐⭐⭐⭐</div>
+                            <p>"Sayurnya segar banget, pengiriman juga cepat. Sangat membantu untuk ibu pekerja seperti
+                                saya!"</p>
+                            <h4 class="h6 fw-bold text-primary mt-4">- Rina, Jakarta</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card testi-card bg-light h-100 p-4">
+                        <div class="card-body p-0">
+                            <div class="stars mb-3">⭐⭐⭐⭐⭐</div>
+                            <p>"Harganya lebih murah dari supermarket, kualitasnya jauh lebih bagus. Mantap SegarTani!"
+                            </p>
+                            <h4 class="h6 fw-bold text-primary mt-4">- Siti, Depok</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card testi-card bg-light h-100 p-4">
+                        <div class="card-body p-0">
+                            <div class="stars mb-3">⭐⭐⭐⭐⭐</div>
+                            <p>"Bumbu dapurnya lengkap dan selalu fresh. Langganan bulanan sekarang."</p>
+                            <h4 class="h6 fw-bold text-primary mt-4">- Anisa, Tangerang</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="order-section section-padding">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-3 display-6">Gabung Bersama <br><span class="text-primary">5000+ Ibu Rumah
+                            Tangga</span></h2>
+                    <p class="text-muted mb-5 fs-5">Jangan lewatkan promo "Dapur Sehat" setiap minggunya.</p>
+
+                    <div class="card bg-white p-4 custom-rounded testimonial-highlight">
+                        <p class="fst-italic mb-2 text-muted">"Sejak langganan di SegarTani, saya tidak perlu repot ke
+                            pasar pagi-pagi. Kualitas bumbunya benar-benar premium!"</p>
+                        <cite class="fw-bold">— Ibu Maya, Bandung</cite>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card p-4 p-md-5 custom-rounded bg-white">
+                        <h3 class="fw-bold mb-4">Daftar Member</h3>
+
+                        <div id="successAlert" class="alert alert-success alert-dismissible fade show d-none"
+                            role="alert">
+                            <strong>Berhasil!</strong> Pendaftaran Anda telah kami terima.
+                            <button type="button" class="btn-close" aria-label="Close" onclick="closeAlert()"></button>
+                        </div>
+
+                        <form id="orderForm">
+                            <div class="mb-3">
+                                <label for="namaLengkap" class="form-label fw-bold">Nama Lengkap</label>
+                                <input type="text" class="form-control form-control-sm-custom" id="namaLengkap"
+                                    placeholder="Contoh: Budi Santoso" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="emailAlamat" class="form-label fw-bold">Email</label>
+                                <input type="email" class="form-control form-control-sm-custom" id="emailAlamat"
+                                    placeholder="email@kamu.com" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="pilihPaket" class="form-label fw-bold">Pilih Paket</label>
+                                <select class="form-select form-select-sm-custom" id="pilihPaket" required>
+                                    <option value="" selected disabled>Pilih paket berlangganan...</option>
+                                    <option value="1">Paket Sayur Mingguan</option>
+                                    <option value="2">Paket Bumbu Lengkap</option>
+                                    <option value="3">Paket Buah Organik</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 btn-lg shadow-sm">Dapatkan Diskon
+                                20%</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-footer text-center py-4">
+        <div class="container">
+            <p class="mb-0 footer-text">&copy; 2026 SegarTani. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const orderForm = document.getElementById('orderForm');
+        const successAlert = document.getElementById('successAlert');
+
+        orderForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            successAlert.classList.remove('d-none');
+            this.reset();
+            setTimeout(() => {
+                successAlert.classList.add('d-none');
+            }, 5000);
+        });
+
+        function closeAlert() {
+            successAlert.classList.add('d-none');
+        }
+
+        document.querySelectorAll('.navbar-nav a[href^="#"], .navbar-brand a[href^="#"], .btn-navbar[href^="#"], .btn-primary[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#' || targetId === '') return;
+                const target = document.querySelector(targetId);
+                const navbarToggler = document.querySelector('.navbar-toggler');
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (window.getComputedStyle(navbarToggler).display !== 'none' && navbarCollapse.classList.contains('show')) {
+                    navbarToggler.click();
+                }
+                if (target) {
+                    const navbarHeight = 80;
+                    const extraOffset = 20;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - extraOffset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
